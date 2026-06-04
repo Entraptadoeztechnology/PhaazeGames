@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Play</title>
+  <style>
+    body { margin: 0; background: black; }
+    iframe { width: 100%; height: 100vh; border: none; }
+  </style>
+</head>
+<body>
 
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: black;
-      }
+<iframe id="gameFrame"></iframe>
 
-      iframe {
-        width: 100%;
-        height: 100vh;
-        border: none;
-      }
-    </style>
-  </head>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const gamePath = params.get("gameurl");
 
-  <body>
-    <iframe id="gameFrame"></iframe>
+  if (!gamePath) {
+    alert("No game selected");
+    window.location.href = "/";
+  } else {
+    document.getElementById("gameFrame").src = gamePath;
+  }
+</script>
 
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const gamePath = params.get("gameurl");
-
-      if (!gamePath) {
-        alert("No game found!");
-        window.location.href = "/";
-      } else {
-        // IMPORTANT FIX: use local files, not external server
-        document.getElementById("gameFrame").src = gamePath;
-      }
-    </script>
-  </body>
+</body>
 </html>
