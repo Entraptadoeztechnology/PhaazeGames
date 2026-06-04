@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Play Game</title>
 
-    <script src="config/main.js" type="module"></script>
     <style>
       body {
         margin: 0;
         padding: 0;
+        background: black;
       }
 
       iframe {
@@ -19,21 +19,20 @@
       }
     </style>
   </head>
+
   <body>
     <iframe id="gameFrame"></iframe>
 
     <script>
-      var serverUrl1 = "https://parcoil-assets.onrender.com";
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
+      const urlParams = new URLSearchParams(window.location.search);
       const gameUrl = urlParams.get("gameurl");
 
       if (!gameUrl) {
         alert("Game URL not provided!");
-        window.location.href = "/"; // Redirect to homepage if game URL is missing
+        window.location.href = "/";
       } else {
-        const embedUrl = `${serverUrl1}/${gameUrl}`;
-        document.getElementById("gameFrame").src = embedUrl;
+        // Load local game file directly from your repo
+        document.getElementById("gameFrame").src = gameUrl;
       }
     </script>
   </body>
