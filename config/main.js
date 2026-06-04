@@ -1,5 +1,5 @@
-var sitename = "Bens Unblocked Games";
-var subtext = "v1.2";
+var sitename = "Phaaze Unblocked Games";
+var subtext = "v1.0";
 
 document.title = document.title + " | " + sitename;
 
