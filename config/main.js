@@ -21,14 +21,12 @@ function displayGames(list) {
     const div = document.createElement("div");
     div.className = "game";
 
-    // WRAPPER (for badge positioning)
     const wrapper = document.createElement("div");
     wrapper.style.position = "relative";
     wrapper.style.display = "inline-block";
 
     const img = document.createElement("img");
 
-    // SAFE IMAGE HANDLING
     if (!game.image) {
       img.src = "photos/placeholder.png";
     } else if (game.image.startsWith("http")) {
@@ -51,12 +49,7 @@ function displayGames(list) {
       }
     };
 
-    const title = document.createElement("p");
-    title.textContent = game.name;
-
-    // =======================
-    // NEW BADGE (ADDED PART)
-    // =======================
+    // NEW BADGE
     if (game.new === true) {
       const badge = document.createElement("div");
       badge.textContent = "NEW";
@@ -69,13 +62,13 @@ function displayGames(list) {
       badge.style.fontSize = "12px";
       badge.style.fontWeight = "bold";
       badge.style.borderRadius = "6px";
-      badge.style.zIndex = "10";
-
       wrapper.appendChild(badge);
     }
 
-    wrapper.appendChild(img);
+    const title = document.createElement("p");
+    title.textContent = game.name;
 
+    wrapper.appendChild(img);
     div.appendChild(wrapper);
     div.appendChild(title);
     container.appendChild(div);
@@ -86,10 +79,7 @@ function displayGames(list) {
 // SEARCH
 // =======================
 function handleSearch() {
-  const value = document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase();
+  const value = document.getElementById("searchInput").value.toLowerCase();
 
   const filtered = gamesData.filter((g) =>
     g.name.toLowerCase().includes(value)
@@ -99,9 +89,20 @@ function handleSearch() {
 }
 
 // =======================
-// CATEGORY FILTER
+// CATEGORY SYSTEM
 // =======================
-function filterCategory(cat) {
+function setCategory(cat) {
+  const buttons = document.querySelectorAll(".category-btn");
+
+  buttons.forEach((b) => b.classList.remove("active"));
+
+  const active = Array.from(buttons).find((b) =>
+    b.textContent.toLowerCase() === cat ||
+    (cat === "all" && b.textContent === "All")
+  );
+
+  if (active) active.classList.add("active");
+
   if (cat === "all") {
     displayGames(gamesData);
     return;
@@ -114,7 +115,7 @@ function filterCategory(cat) {
   displayGames(filtered);
 }
 
-window.filterCategory = filterCategory;
+window.setCategory = setCategory;
 
 // =======================
 // LOAD JSON
@@ -122,13 +123,10 @@ window.filterCategory = filterCategory;
 fetch("./config/games.json")
   .then((res) => res.json())
   .then((data) => {
-    console.log("Loaded games:", data);
     gamesData = data;
     displayGames(gamesData);
   })
-  .catch((err) => {
-    console.error("Error loading games.json:", err);
-  });
+  .catch((err) => console.error("Error loading games.json:", err));
 
 // =======================
 // EVENTS
