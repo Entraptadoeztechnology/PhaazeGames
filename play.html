@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play Game</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play</title>
 
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: black;
-      }
+  <style>
+    body {
+      margin: 0;
+    }
 
-      iframe {
-        width: 100%;
-        height: 100vh;
-        border: none;
-      }
-    </style>
-  </head>
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
 
-  <body>
-    <iframe id="gameFrame"></iframe>
+<iframe id="gameFrame"></iframe>
 
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const gameUrl = urlParams.get("gameurl");
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const gamePath = params.get("gameurl");
 
-      if (!gameUrl) {
-        alert("Game URL not provided!");
-        window.location.href = "/";
-      } else {
-        // Load local game file directly from your repo
-        document.getElementById("gameFrame").src = gameUrl;
-      }
-    </script>
-  </body>
+  if (!gamePath) {
+    alert("No game selected");
+    window.location.href = "/";
+  } else {
+    document.getElementById("gameFrame").src = gamePath;
+  }
+</script>
+
+</body>
 </html>
