@@ -34,18 +34,18 @@ function displayGames(list) {
     } else {
       img.src = game.image.startsWith("photos/")
         ? game.image
-        : `photos/${game.image}`;
+        : `https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeUnblockedGames@refs/heads/main/photos/${game.image}`;
     }
 
     img.alt = game.name;
 
     img.onerror = () => {
-      img.src = "photos/placeholder.png";
+      img.src = "https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeUnblockedGames@refs/heads/main/photos/placeholder.png";
     };
 
     img.onclick = () => {
       if (game.path) {
-        window.location.href = `play.html?gameurl=${game.path}`;
+        window.location.href = `https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeUnblockedGames@refs/heads/main/play.html?gameurl=${game.path}`;
       }
     };
 
@@ -120,7 +120,7 @@ window.setCategory = setCategory;
 // =======================
 // LOAD JSON
 // =======================
-fetch("./config/games.json")
+fetch("https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeUnblockedGames@refs/heads/main/config/games.json")
   .then((res) => res.json())
   .then((data) => {
     gamesData = data;
