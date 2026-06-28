@@ -45,7 +45,7 @@ function displayGames(list) {
 
     img.onclick = () => {
       if (game.path) {
-        window.location.href = `https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeGames@refs/heads/main/play.html?gameurl=${game.path}`;
+        window.location.href = `https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/play.html?gameurl=${game.path}`;
       }
     };
 
