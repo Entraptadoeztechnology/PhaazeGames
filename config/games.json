@@ -1,16 +1,16 @@
 [
   {
     "name": "Klonoa Empire of Dreams",
-    "image": "https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeGames@refs/heads/main/photos/klona.jpg",
-    "path": "https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeGames@refs/heads/main/games/Klonoa_Empire_of_Dreams.html",
+    "image": "https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/photos/klona.jpg",
+    "path": "https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/games/Klonoa_Empire_of_Dreams.html",
     "new": false,
     "category": "game"
   },
 
   {
     "name": "Unfaredine",
-    "image": "https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeGames@refs/heads/main/photos/Unfair-Undyne-cropped.jpg",
-    "path": "https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeGames@refs/heads/main/games/NGAHHHsim.html",
+    "image": "https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/photos/Unfair-Undyne-cropped.jpg",
+    "path": "https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/games/NGAHHHsim.html",
     "new": true,
     "category": "game"
   }
