@@ -120,7 +120,7 @@ window.setCategory = setCategory;
 // =======================
 // LOAD JSON
 // =======================
-fetch("https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeGames@refs/heads/main/config/games.json")
+fetch("https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/games.json")
   .then((res) => res.json())
   .then((data) => {
     gamesData = data;
