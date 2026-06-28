@@ -28,13 +28,13 @@ function displayGames(list) {
     const img = document.createElement("img");
 
     if (!game.image) {
-      img.src = "photos/placeholder.png";
+      img.src = "https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/photos/placeholder.png";
     } else if (game.image.startsWith("http")) {
       img.src = game.image;
     } else {
       img.src = game.image.startsWith("photos/")
         ? game.image
-        : `https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeGames@refs/heads/main/photos/${game.image}`;
+        : `https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/${game.image}`;
     }
 
     img.alt = game.name;
