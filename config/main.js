@@ -1,4 +1,4 @@
-var sitename = "Phaaze Games";
+var sitename = "Phaaze Unblocked Games";
 var subtext = "v1.0";
 
 document.title = document.title + " | " + sitename;
@@ -28,24 +28,24 @@ function displayGames(list) {
     const img = document.createElement("img");
 
     if (!game.image) {
-      img.src = "https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/photos/placeholder.png";
+      img.src = "photos/placeholder.png";
     } else if (game.image.startsWith("http")) {
       img.src = game.image;
     } else {
       img.src = game.image.startsWith("photos/")
         ? game.image
-        : `https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/photos/${game.image}`;
+        : `photos/${game.image}`;
     }
 
     img.alt = game.name;
 
     img.onerror = () => {
-      img.src = "https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/photos/placeholder.png";
+      img.src = "photos/placeholder.png";
     };
 
     img.onclick = () => {
       if (game.path) {
-        window.location.href = `https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/play.html?gameurl=${game.path}`;
+        window.location.href = `play.html?gameurl=${game.path}`;
       }
     };
 
@@ -120,7 +120,7 @@ window.setCategory = setCategory;
 // =======================
 // LOAD JSON
 // =======================
-fetch("https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/config/games.json")
+fetch("config/games.json")
   .then((res) => res.json())
   .then((data) => {
     gamesData = data;
