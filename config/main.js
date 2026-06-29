@@ -34,7 +34,7 @@ function displayGames(list) {
     } else {
       img.src = game.image.startsWith("photos/")
         ? game.image
-        : `https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/${game.image}`;
+        : `https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/photos/${game.image}`;
     }
 
     img.alt = game.name;
