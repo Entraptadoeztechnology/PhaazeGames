@@ -40,7 +40,7 @@ function displayGames(list) {
     img.alt = game.name;
 
     img.onerror = () => {
-      img.src = "https://cdn.jsdelivr.net/gh/Entraptadoeztechnology/PhaazeGames@refs/heads/main/photos/placeholder.png";
+      img.src = "https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/photos/placeholder.png";
     };
 
     img.onclick = () => {
@@ -120,7 +120,7 @@ window.setCategory = setCategory;
 // =======================
 // LOAD JSON
 // =======================
-fetch("https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/games.json")
+fetch("https://rawcdn.githack.com/Entraptadoeztechnology/PhaazeGames/refs/heads/main/config/games.json")
   .then((res) => res.json())
   .then((data) => {
     gamesData = data;
